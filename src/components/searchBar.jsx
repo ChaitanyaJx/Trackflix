@@ -27,7 +27,6 @@ export function SearchBar({ onSearch, genres, languages }) {
   const [minRating, setMinRating] = useState("none");
 
   const handleSearch = () => {
-    // Only perform search if query is not empty
     if (query.trim()) {
       onSearch({
         query,
@@ -45,79 +44,99 @@ export function SearchBar({ onSearch, genres, languages }) {
   };
 
   return (
-    <div className="flex items-center space-x-2">
-      <div className="relative flex-grow">
-        <Search className="absolute left-2 top-2.5 h-4 w-4 text-blue-400" />
-        <Input
-          placeholder="Search movies..."
-          className="pl-8 bg-white/10 border-slate-700 text-white placeholder:text-slate-400 focus:border-blue-500"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onKeyPress={handleKeyPress}
-        />
+    <div className="w-full max-w-4xl mx-auto">
+      <div className="flex flex-col sm:flex-row gap-3">
+        <div className="relative flex-grow">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-cyan-400" />
+          <Input
+            placeholder="Search movies..."
+            className="pl-10 h-12 sm:h-10 text-base sm:text-sm bg-black/50 border-cyan-500/50 text-cyan-400 placeholder:text-cyan-400/50 focus:border-cyan-500 focus:ring-cyan-500"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyPress={handleKeyPress}
+          />
+        </div>
+
+        <div className="flex gap-2">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                variant="outline"
+                size="icon"
+                className="h-12 sm:h-10 aspect-square border-cyan-500/50 hover:bg-cyan-950/50"
+              >
+                <Filter className="h-5 w-5 text-cyan-400" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="w-[90vw] sm:max-w-md border-cyan-500/50 bg-black/95 backdrop-blur-sm">
+              <SheetHeader>
+                <SheetTitle className="text-cyan-400">Filter Movies</SheetTitle>
+                <SheetDescription className="text-cyan-400/70">
+                  Apply filters to refine your movie search.
+                </SheetDescription>
+              </SheetHeader>
+              <div className="grid gap-4 py-6">
+                <Select onValueChange={setGenre} value={genre}>
+                  <SelectTrigger className="h-12 sm:h-10 bg-black/50 border-cyan-500/50 text-cyan-400">
+                    <SelectValue placeholder="Select genre" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-black/90 border-cyan-500/50 text-cyan-400">
+                    <SelectItem value="all">All Genres</SelectItem>
+                    {genres.map((g) => (
+                      <SelectItem key={g} value={g}>
+                        {g}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+
+                <Select onValueChange={setLanguage} value={language}>
+                  <SelectTrigger className="h-12 sm:h-10 bg-black/50 border-cyan-500/50 text-cyan-400">
+                    <SelectValue placeholder="Select language" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-black/90 border-cyan-500/50 text-cyan-400">
+                    <SelectItem value="all">All Languages</SelectItem>
+                    {languages.map((l) => (
+                      <SelectItem key={l} value={l}>
+                        {l}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+
+                <Select onValueChange={setMinRating} value={minRating}>
+                  <SelectTrigger className="h-12 sm:h-10 bg-black/50 border-cyan-500/50 text-cyan-400">
+                    <SelectValue placeholder="Minimum rating" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-black/90 border-cyan-500/50 text-cyan-400">
+                    <SelectItem value="none">No minimum</SelectItem>
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((rating) => (
+                      <SelectItem key={rating} value={rating.toString()}>
+                        {rating}+
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <Button
+                onClick={handleSearch}
+                disabled={!query.trim()}
+                className="w-full h-12 sm:h-10 bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 disabled:opacity-50"
+              >
+                Apply Filters
+              </Button>
+            </SheetContent>
+          </Sheet>
+
+          <Button
+            onClick={handleSearch}
+            disabled={!query.trim()}
+            className="h-12 sm:h-10 px-6 bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 disabled:opacity-50"
+          >
+            Search
+          </Button>
+        </div>
       </div>
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="outline" size="icon">
-            <Filter className="h-4 w-4" />
-          </Button>
-        </SheetTrigger>
-        <SheetContent>
-          <SheetHeader>
-            <SheetTitle>Filter Movies</SheetTitle>
-            <SheetDescription>
-              Apply filters to refine your movie search.
-            </SheetDescription>
-          </SheetHeader>
-          <div className="grid gap-4 py-4">
-            <Select onValueChange={setGenre} value={genre}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select genre" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Genres</SelectItem>
-                {genres.map((g) => (
-                  <SelectItem key={g} value={g}>
-                    {g}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            <Select onValueChange={setLanguage} value={language}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select language" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Languages</SelectItem>
-                {languages.map((l) => (
-                  <SelectItem key={l} value={l}>
-                    {l}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-            <Select onValueChange={setMinRating} value={minRating}>
-              <SelectTrigger>
-                <SelectValue placeholder="Minimum rating" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="none">No minimum</SelectItem>
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((rating) => (
-                  <SelectItem key={rating} value={rating.toString()}>
-                    {rating}+
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          <Button onClick={handleSearch} disabled={!query.trim()}>
-            Apply Filters
-          </Button>
-        </SheetContent>
-      </Sheet>
-      <Button onClick={handleSearch} disabled={!query.trim()}>
-        Search
-      </Button>
     </div>
   );
 }

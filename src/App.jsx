@@ -23,8 +23,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Outlet, useNavigate } from "react-router-dom";
 
-
-const OMDB_API_KEY = import.meta.env.VITE_OMDB_API_KEY;
+const OMDB_API_KEY = "804873cb";
 
 export default function MovieTracker() {
   const [movies, setMovies] = useState([]);
@@ -56,7 +55,6 @@ export default function MovieTracker() {
 
   useEffect(() => {
     if (username) {
-      // Re-render the SearchBar component
       setMovies([]);
       setIsSearching(false);
     }
@@ -377,7 +375,7 @@ export default function MovieTracker() {
   return (
     <div className="min-h-screen bg-black relative">
       <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
-        <DialogContent className="bg-black/90 border border-cyan-500/50 backdrop-blur-sm">
+        <DialogContent className="bg-black/90 border border-cyan-500/50 backdrop-blur-sm w-[90vw] max-w-md mx-auto">
           <DialogHeader>
             <DialogTitle className="text-cyan-400">Sign In</DialogTitle>
             <DialogDescription className="text-gray-400">
@@ -392,7 +390,7 @@ export default function MovieTracker() {
           />
           <Button
             onClick={handleLoginSubmit}
-            className="bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30"
+            className="w-full sm:w-auto bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30"
           >
             Sign In
           </Button>
@@ -401,11 +399,11 @@ export default function MovieTracker() {
 
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/30 via-green-900/30 through-purple-900/30 to-fuchsia-900/30" />
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
-      <div className="container mx-auto p-4 relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <header className="mb-8 pt-4">
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
             <h1
-              className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-green-400 to-purple-500 animate-text-glow cursor-pointer"
+              className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-green-400 to-purple-500 animate-text-glow cursor-pointer"
               onClick={() => navigate("/")}
             >
               TrackFlix
@@ -416,7 +414,7 @@ export default function MovieTracker() {
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="outline"
-                    className="border-cyan-500/50 hover:bg-cyan-950/50"
+                    className="w-full sm:w-auto border-cyan-500/50 hover:bg-cyan-950/50"
                   >
                     <User className="mr-2 h-4 w-4" />
                     {username}
@@ -458,7 +456,7 @@ export default function MovieTracker() {
             ) : (
               <Button
                 variant="outline"
-                className="border-cyan-500/50 hover:bg-cyan-950/50"
+                className="w-full sm:w-auto border-cyan-500/50 hover:bg-cyan-950/50"
                 onClick={handleLogin}
               >
                 <User className="mr-2 h-4 w-4" />
@@ -468,9 +466,9 @@ export default function MovieTracker() {
           </div>
         </header>
 
-        <main className="space-y-12">
+        <main className="space-y-8 sm:space-y-12">
           {!username && (
-            <div className="text-center text-cyan-400 p-4 bg-cyan-950/20 border border-cyan-500/50 rounded-lg backdrop-blur-sm">
+            <div className="text-center text-cyan-400 p-4 mx-4 sm:mx-0 bg-cyan-950/20 border border-cyan-500/50 rounded-lg backdrop-blur-sm">
               Please sign in to start tracking movies
             </div>
           )}
