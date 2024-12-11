@@ -22,6 +22,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Outlet, useNavigate } from "react-router-dom";
+
 const OMDB_API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
 export default function MovieTracker() {
