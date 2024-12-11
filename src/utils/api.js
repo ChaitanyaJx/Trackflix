@@ -1,6 +1,5 @@
-const JSONBIN_API_KEY =
-  "$2a$10$8jbqDqWs51Nhc35tki/v1.YdUelR.yU.CwO26JgH7Eb2dyJU01EJi";
-const BIN_ID = "67590f18acd3cb34a8b796e5";
+const JSONBIN_API_KEY = import.meta.env.VITE_JSONBIN_API_KEY;
+const BIN_ID = import.meta.env.VITE_BIN_ID;
 
 // Save user data to JSONBin
 export const saveToJsonBin = async (username, data) => {
