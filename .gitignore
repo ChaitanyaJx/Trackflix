@@ -1,0 +1,22 @@
+# Node.js and npm
+node_modules/
+package-lock.json
+
+# Vite
+dist/
+.cache/
+public/build/
+
+# ESLint
+.eslintcache/
+
+# Editor and IDE files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+README.md

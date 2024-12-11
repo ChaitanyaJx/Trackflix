@@ -1,0 +1,148 @@
+[
+  {
+    "title": "Inception",
+    "genre": [
+      "Sci-Fi",
+      "Action",
+      "Thriller"
+    ],
+    "language": "English",
+    "imdbRating": 8.8,
+    "watched": false,
+    "trending": true,
+    "inWatchlist": false,
+    "imageUrl": "https://example.com/inception.jpg",
+    "description": "A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O."
+  },
+  {
+    "title": "Parasite",
+    "genre": [
+      "Drama",
+      "Thriller"
+    ],
+    "language": "Korean",
+    "imdbRating": 8.6,
+    "watched": true,
+    "trending": true,
+    "inWatchlist": false,
+    "imageUrl": "https://example.com/parasite.jpg",
+    "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan."
+  },
+  {
+    "title": "The Godfather",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "language": "English",
+    "imdbRating": 9.2,
+    "watched": false,
+    "trending": false,
+    "inWatchlist": false,
+    "imageUrl": "https://example.com/godfather.jpg",
+    "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
+  },
+  {
+    "title": "3 Idiots",
+    "genre": [
+      "Comedy",
+      "Drama"
+    ],
+    "language": "Hindi",
+    "imdbRating": 8.4,
+    "watched": false,
+    "trending": true,
+    "inWatchlist": true,
+    "imageUrl": "https://example.com/3idiots.jpg",
+    "description": "Two friends search for their long lost companion who inspired them to think differently, even as the rest of the world called them 'idiots'."
+  },
+  {
+    "title": "Spirited Away",
+    "genre": [
+      "Animation",
+      "Adventure",
+      "Fantasy"
+    ],
+    "language": "Japanese",
+    "imdbRating": 8.6,
+    "watched": true,
+    "trending": false,
+    "inWatchlist": false,
+    "imageUrl": "https://example.com/spirited-away.jpg",
+    "description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, where humans are changed into beasts."
+  },
+  {
+    "title": "The Dark Knight",
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "language": "English",
+    "imdbRating": 9,
+    "watched": false,
+    "trending": true,
+    "inWatchlist": true,
+    "imageUrl": "https://example.com/dark-knight.jpg",
+    "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."
+  },
+  {
+    "title": "La La Land",
+    "genre": [
+      "Drama",
+      "Music",
+      "Romance"
+    ],
+    "language": "English",
+    "imdbRating": 8,
+    "watched": false,
+    "trending": true,
+    "inWatchlist": false,
+    "imageUrl": "https://example.com/lalaland.jpg",
+    "description": "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future."
+  },
+  {
+    "title": "Life Is Beautiful",
+    "genre": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "language": "Italian",
+    "imdbRating": 8.6,
+    "watched": true,
+    "trending": false,
+    "inWatchlist": false,
+    "imageUrl": "https://example.com/life-is-beautiful.jpg",
+    "description": "When an open-minded Jewish librarian and his son become victims of the Holocaust, he uses a perfect mixture of will, humor, and imagination to protect his son from the dangers around their camp."
+  },
+  {
+    "title": "City of God",
+    "genre": [
+      "Crime",
+      "Drama"
+    ],
+    "language": "Portuguese",
+    "imdbRating": 8.6,
+    "watched": false,
+    "trending": false,
+    "inWatchlist": false,
+    "imageUrl": "https://example.com/city-of-god.jpg",
+    "description": "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin."
+  },
+  {
+    "title": "Your Name",
+    "genre": [
+      "Animation",
+      "Drama",
+      "Fantasy"
+    ],
+    "language": "Japanese",
+    "imdbRating": 8.4,
+    "watched": true,
+    "trending": true,
+    "inWatchlist": false,
+    "imageUrl": "https://example.com/your-name.jpg",
+    "description": "Two strangers find themselves linked in a bizarre way. When a connection forms, will distance be the only thing to keep them apart?"
+  }
+]
